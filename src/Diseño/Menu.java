@@ -29,6 +29,7 @@ public class Menu extends javax.swing.JFrame {
          lista = c.listar_bases();
         for(int i = 0; i <lista.size(); i++){
             jComboBox1.addItem(lista.get(i));
+            
         }
     }
 
@@ -232,6 +233,7 @@ public class Menu extends javax.swing.JFrame {
             c.ConectarBasedeDatos("mysql");
             c.sentencia.execute("CREATE DATABASE " + txtBD.getText());
             jLabel1.setText("La Base de Datos" + txtBD.getText()+ ", ¡Fue creada con exito!!");
+            jComboBox1.addItem(txtBD.getText());
             txtBD.setEnabled(true);
             c.DesconectarBasedeDatos();
         } catch (Exception ex) {
